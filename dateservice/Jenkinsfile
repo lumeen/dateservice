@@ -2,12 +2,12 @@ node {
     def app
 
     stage('Clone repository') {
-     sh 'echo clone'
+
         checkout scm
     }
 
     stage('Build image') {
- sh 'echo build'
+
         app = docker.build("dataservice/dataservice")
     }
 
