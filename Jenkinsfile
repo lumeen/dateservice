@@ -6,7 +6,8 @@ node {
     }
 
     stage('Build image') {
-        app = sudo.docker.build("dataservice/dataservice")
+sh 'sudo docker build dataservice/dataservice'
+
     }
 
     stage('Test image') {
