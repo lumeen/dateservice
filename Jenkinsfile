@@ -6,8 +6,7 @@ node {
     }
 
     stage('Build image') {
-sh 'sudo docker build dataservice/dataservice'
-
+        app = docker.build("dataservice/dataservice")
     }
 
     stage('Test image') {
@@ -24,6 +23,9 @@ sh 'sudo docker build dataservice/dataservice'
             app.push("latest")
         }
 
+
+
     }
 }
+
 
