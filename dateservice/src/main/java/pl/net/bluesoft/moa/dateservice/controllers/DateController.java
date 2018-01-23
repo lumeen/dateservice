@@ -27,7 +27,7 @@ public class DateController {
 
     @GetMapping(path = "current", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> getCurrentDate() {
-        logger.info("Geetting date from DataService... {}",dateService.getData());
+        logger.info("Geetting date from DataServices... {}",dateService.getData());
         return new ResponseEntity<>(dateService.getData().toString() + " Data Service IP is: " +System.getenv("MY_POD_IP"), HttpStatus.OK);
     }
 }
