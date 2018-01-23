@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: pl.net.bluesoft.moa.dateservice.DateserviceApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.343 sec - in pl.net.bluesoft.moa.dateservice.DateserviceApplicationTests
