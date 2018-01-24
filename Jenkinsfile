@@ -1,43 +1,25 @@
 node {
     def app
 
+    stage('Test image')
 
-
-  
-
-  stage('Test image') 
-
- withMaven(
-        
-        maven: 'Maven',
-       
-       
+    withMaven(
+            maven: 'Maven',
     )
-
-
-{
-
-
-       
-            sh 'mvn test'
-        
-    }
+            {
+                sh 'mvn test'
+            }
 
     stage('Build image') {
         app = docker.build("dataservice/dataservice")
     }
-
-  
-
+    
     stage('Push image') {
-        docker.withRegistry('http://46.51.141.195:5000/') {
+        docker.withRegistry('http://46.51.141.195:5000/','docker-reg-cred') {
             app.push("${env.BUILD_NUMBER}")
             app.push("latest")
         }
-
-
-
+        
     }
 }
-
 
