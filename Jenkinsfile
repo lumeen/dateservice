@@ -30,7 +30,7 @@ node {
   
 
     stage('Push image') {
-        docker.withRegistry('http://46.51.141.195:5000/') {
+        docker.withRegistry('https://46.51.141.195:5000/') {
             app.push("${env.BUILD_NUMBER}")
             app.push("latest")
         }
