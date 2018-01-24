@@ -1,6 +1,11 @@
 node {
     def app
 
+    tools {
+        maven 'Maven 3.5.2'
+        jdk 'jdk8'
+    }
+
     stage('Clone repository') {
         checkout scm
     }
