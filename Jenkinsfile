@@ -19,8 +19,7 @@ node {
     }
     
     stage('Push image') {
-        docker.withRegistry('http://54.77.188.106
-:5000/','docker-reg-cred') {
+        docker.withRegistry('http://54.77.188.106:5000/','docker-reg-cred') {
             app.push("${env.BUILD_NUMBER}")
             app.push("latest")
         }
